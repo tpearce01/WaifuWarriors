@@ -9,17 +9,27 @@ public class GameOver : MonoBehaviour {
 
 	void Start () {
         FindObjectOfType<MusicManager>().Stop("GameSong");
-        FindObjectOfType<AudioManager>().Stop("Siren");
-        FindObjectOfType<AudioManager>().Stop("Fire");
-        FindObjectOfType<AudioManager>().Stop("Clock");
-        FindObjectOfType<AudioManager>().Stop("Whistle");
+        
 
         Time.timeScale = 0.0f;	
 	}
 
     void Update()
     {
-        
+        FindObjectOfType<AudioManager>().Stop("Siren");
+        FindObjectOfType<AudioManager>().Stop("Fire");
+        FindObjectOfType<AudioManager>().Stop("Explosion");
+        FindObjectOfType<AudioManager>().Stop("Clock");
+        FindObjectOfType<AudioManager>().Stop("Whistle");
+        FindObjectOfType<AudioManager>().Stop("ChargedWrath");
+        FindObjectOfType<AudioManager>().Stop("Wave");
+        FindObjectOfType<AudioManager>().Stop("coin");
+        FindObjectOfType<AudioManager>().Stop("electricwave");
+        FindObjectOfType<AudioManager>().Stop("rain");
+        FindObjectOfType<AudioManager>().Stop("bubble");
+        FindObjectOfType<AudioManager>().Stop("holy");
+        FindObjectOfType<AudioManager>().Stop("sparklight");
+
         Time.timeScale = 0.0f;
     }
 
