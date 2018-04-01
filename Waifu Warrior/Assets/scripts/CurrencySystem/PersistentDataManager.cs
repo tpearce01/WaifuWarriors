@@ -199,8 +199,9 @@ public enum Item {
 /// Waifu indices
 /// </summary>
 public enum Waifu {
-    Nana = 0,
-    Emiko = 1,
+    Nana = 0, //pink hair
+    Emiko = 1, 
     Sakura = 2,
     Sora = 3
 }
+
