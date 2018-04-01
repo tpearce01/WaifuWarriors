@@ -19,14 +19,34 @@ public class LockSystem : MonoBehaviour {
     public void CharacterLockSystem()
     {
         
-        if (!PersistentDataManager.IsWaifuOwned(Waifu.Nana))
+        if (!PersistentDataManager.IsWaifuOwned(Waifu.Sora))
         {
             locked_screen[0].SetActive(true);
         }
-        else if(PersistentDataManager.IsWaifuOwned(Waifu.Nana))
+        else if(PersistentDataManager.IsWaifuOwned(Waifu.Sora))
         {
             locked_screen[0].SetActive(false);
         }
-        
+
+        if (!PersistentDataManager.IsWaifuOwned(Waifu.Nana))
+        {
+            locked_screen[1].SetActive(true);
+        }
+        else if (PersistentDataManager.IsWaifuOwned(Waifu.Nana))
+        {
+            locked_screen[1].SetActive(false);
+        }
+        if (!PersistentDataManager.IsWaifuOwned(Waifu.Yellow))
+        {
+            locked_screen[2].SetActive(true);
+        }
+        else if (PersistentDataManager.IsWaifuOwned(Waifu.Yellow))
+        {
+            locked_screen[2].SetActive(false);
+        }
+
+
+
+
     }
 }

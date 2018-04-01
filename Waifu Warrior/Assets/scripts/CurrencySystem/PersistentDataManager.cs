@@ -93,15 +93,8 @@ public static class PersistentDataManager {
 
         //Save waifus
         toReturn += ',' + ((int)selectedWaifu).ToString();
-        bool hasAWaifu = false;
         for (int i = 0; i < waifusOwned.Length; i++) {
             toReturn += "," + (waifusOwned[i] ? '1' : '0');
-            if (waifusOwned[i]) {
-                hasAWaifu = true;
-            }
-        }
-        if (!hasAWaifu) {
-            waifusOwned[0] = true;
         }
         Debug.Log(toReturn);
         return toReturn;
@@ -199,9 +192,9 @@ public enum Item {
 /// Waifu indices
 /// </summary>
 public enum Waifu {
-    Nana = 0, //pink hair
-    Emiko = 1, 
-    Sakura = 2,
-    Sora = 3
+    Pink = 0, //pink hair
+    Sora = 1, 
+    Nana = 2,
+    Yellow = 3
 }
 
