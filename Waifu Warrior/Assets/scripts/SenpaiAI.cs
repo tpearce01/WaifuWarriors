@@ -55,6 +55,7 @@ public class SenpaiAI : MonoBehaviour {
         Instantiate(hit, transform.position, transform.rotation);
         if (health <= 0)
         {
+            WrathManager.fillAmountWrath += .02f;
             Destroy(gameObject);
         }
     }
