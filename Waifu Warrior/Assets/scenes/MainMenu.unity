@@ -15195,7 +15195,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: 'Stats:
 
-    Sensei is the third type of enemy that spawns in battle, He is a slow tank with
+    Sensei is the fourth type of enemy that spawns in battle, He is a slow tank with
     3 health and lv1 Speed.
 
 '
@@ -16421,7 +16421,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 698063e12cf7d3744aabeaf1610995d4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9672f60bce9d5f04b9e60553490aafb6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -22562,22 +22562,22 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114099788649903146, guid: f5fc01b8349702a48a3c3f3c5638af7b,
+    - target: {fileID: 114730582708454846, guid: f5fc01b8349702a48a3c3f3c5638af7b,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114099788649903146, guid: f5fc01b8349702a48a3c3f3c5638af7b,
+    - target: {fileID: 114730582708454846, guid: f5fc01b8349702a48a3c3f3c5638af7b,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114730582708454846, guid: f5fc01b8349702a48a3c3f3c5638af7b,
+    - target: {fileID: 114099788649903146, guid: f5fc01b8349702a48a3c3f3c5638af7b,
         type: 2}
       propertyPath: m_havePropertiesChanged
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114730582708454846, guid: f5fc01b8349702a48a3c3f3c5638af7b,
+    - target: {fileID: 114099788649903146, guid: f5fc01b8349702a48a3c3f3c5638af7b,
         type: 2}
       propertyPath: m_isInputParsingRequired
       value: 1

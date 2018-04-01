@@ -32,6 +32,7 @@ public class Player : MonoBehaviour {
     private SpriteRenderer Shape;
     private Animator anim;
     private Transform trans;
+    private CircleCollider2D camoshield;
 
 
     //Camo sprite
@@ -41,6 +42,7 @@ public class Player : MonoBehaviour {
 
     private void Start()
     {
+        camoshield = gameObject.GetComponent<CircleCollider2D>();
         trans = gameObject.GetComponent<Transform>();
         Shape = gameObject.GetComponent<SpriteRenderer>();
         anim = gameObject.GetComponent<Animator>();
@@ -56,6 +58,7 @@ public class Player : MonoBehaviour {
         healthbar = GameObject.FindWithTag("Health");
         rgbd = gameObject.GetComponent<Rigidbody2D>();
         image = gameObject.GetComponent<SpriteRenderer>();
+        camoshield.enabled = false;
     }
 
     public void CamoShape()
@@ -64,10 +67,12 @@ public class Player : MonoBehaviour {
         anim.enabled = false;
         trans.localScale = new Vector3(1.4f, 1.4f, 1.4f);
         immune = true;
+        camoshield.enabled = true;
     }
 
     public void DefaultShape()
     {
+        camoshield.enabled = false;
         Shape.sprite = defaultSprite.sprite;
         anim.enabled = true;
         if (ID == 1)
