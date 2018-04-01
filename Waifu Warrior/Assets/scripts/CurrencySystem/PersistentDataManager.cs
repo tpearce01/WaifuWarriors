@@ -93,8 +93,15 @@ public static class PersistentDataManager {
 
         //Save waifus
         toReturn += ',' + ((int)selectedWaifu).ToString();
+        bool hasAWaifu = false;
         for (int i = 0; i < waifusOwned.Length; i++) {
             toReturn += "," + (waifusOwned[i] ? '1' : '0');
+            if (waifusOwned[i]) {
+                hasAWaifu = true;
+            }
+        }
+        if (!hasAWaifu) {
+            waifusOwned[0] = true;
         }
         Debug.Log(toReturn);
         return toReturn;
