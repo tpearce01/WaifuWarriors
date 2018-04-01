@@ -7,7 +7,7 @@ public class cross_hair : MonoBehaviour {
 
     [SerializeField] private GameObject explosion;
     public Transform target;
-    public GameObject camo;
+    //public GameObject camo;
 
     public Player character;
     void Start()
@@ -16,13 +16,14 @@ public class cross_hair : MonoBehaviour {
         character.CamoShape();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         FindObjectOfType<AudioManager>().Play("Siren");
-        Instantiate(camo, target.position, target.rotation);
+        //Instantiate(camo, target.position, target.rotation);
         StartCoroutine(NotImmune());
     }
     IEnumerator NotImmune()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(4);
         character.immune = false;
+        character.DefaultShape();
     }
     void Update()
     {

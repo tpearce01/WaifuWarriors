@@ -444,7 +444,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 122.27983}
   m_SizeDelta: {x: 304.4, y: 138}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &74912482
@@ -3040,11 +3040,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -3544,6 +3544,7 @@ GameObject:
   - component: {fileID: 749793844}
   - component: {fileID: 749793843}
   - component: {fileID: 749793842}
+  - component: {fileID: 749793848}
   m_Layer: 0
   m_Name: Player3
   m_TagString: Player
@@ -3686,6 +3687,21 @@ Transform:
   m_Father: {fileID: 576994410}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &749793848
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 749793841}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000000027939677, y: -0.000000007450581}
+  serializedVersion: 2
+  m_Radius: 1.35
 --- !u!1 &762839098
 GameObject:
   m_ObjectHideFlags: 0
@@ -3852,6 +3868,7 @@ GameObject:
   - component: {fileID: 780949773}
   - component: {fileID: 780949772}
   - component: {fileID: 780949771}
+  - component: {fileID: 780949776}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -3994,6 +4011,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!58 &780949776
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 780949769}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000000027939677, y: -0.000000007450581}
+  serializedVersion: 2
+  m_Radius: 1.35
 --- !u!1 &797814078
 GameObject:
   m_ObjectHideFlags: 0
@@ -6124,7 +6156,7 @@ Prefab:
     - target: {fileID: 224462760492595648, guid: 07aa68587080464498ef95fb0b54334f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -19.095
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224831764732449788, guid: 07aa68587080464498ef95fb0b54334f,
         type: 2}
@@ -6144,7 +6176,7 @@ Prefab:
     - target: {fileID: 224831764732449788, guid: 07aa68587080464498ef95fb0b54334f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -20.04
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224744853467956606, guid: 07aa68587080464498ef95fb0b54334f,
         type: 2}
@@ -6164,7 +6196,7 @@ Prefab:
     - target: {fileID: 224744853467956606, guid: 07aa68587080464498ef95fb0b54334f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -19.095
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224831764732449788, guid: 07aa68587080464498ef95fb0b54334f,
         type: 2}
@@ -6633,11 +6665,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -6670,6 +6702,7 @@ GameObject:
   - component: {fileID: 1314014495}
   - component: {fileID: 1314014494}
   - component: {fileID: 1314014493}
+  - component: {fileID: 1314014496}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player
@@ -6812,6 +6845,21 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 2.38, y: 4.27}
   m_Direction: 0
+--- !u!58 &1314014496
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1314014489}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000000027939677, y: -0.000000007450581}
+  serializedVersion: 2
+  m_Radius: 1.35
 --- !u!1 &1343330283
 GameObject:
   m_ObjectHideFlags: 0
@@ -8604,6 +8652,7 @@ GameObject:
   - component: {fileID: 1862562580}
   - component: {fileID: 1862562579}
   - component: {fileID: 1862562578}
+  - component: {fileID: 1862562583}
   m_Layer: 0
   m_Name: Player4
   m_TagString: Player
@@ -8746,6 +8795,21 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!58 &1862562583
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1862562576}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0000000027939677, y: -0.000000007450581}
+  serializedVersion: 2
+  m_Radius: 1.35
 --- !u!1 &1877493431
 GameObject:
   m_ObjectHideFlags: 0
@@ -9913,11 +9977,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
