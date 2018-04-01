@@ -42,8 +42,12 @@ public class GameManager : MonoBehaviour {
 
     public bool CheckMoney(int amount)
     {
-        if(amount <= Money)
+        Debug.Log("Below this");
+        Debug.Log(amount);
+        if (amount <= Money)
         {
+            
+            
             return true;
         }
         return false;

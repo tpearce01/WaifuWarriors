@@ -6,6 +6,7 @@ using TMPro;
 public class CharacterSelection : MonoBehaviour {
 
     private GameObject[] characterList;
+    
     public GameObject FireWorks;
 
     private int index;
@@ -13,6 +14,7 @@ public class CharacterSelection : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        
         index = PlayerPrefs.GetInt("CharacterSelected");
 
         characterList = new GameObject[transform.childCount];
