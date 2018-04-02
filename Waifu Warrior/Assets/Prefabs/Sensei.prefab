@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4092704487898830}
   - component: {fileID: 212209496463128810}
-  - component: {fileID: 95072940526581782}
   - component: {fileID: 114822422957601560}
   - component: {fileID: 60867366513652746}
   - component: {fileID: 50938048280209622}
+  - component: {fileID: 95784760129406868}
   m_Layer: 8
   m_Name: Sensei
   m_TagString: Enemy
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1165338647244354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.7875361, y: -2.6516516, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -272,7 +272,7 @@ PolygonCollider2D:
       - {x: -0.57, y: 0.78}
       - {x: -0.59999996, y: 0.75}
       - {x: -0.59, y: 0.75}
---- !u!95 &95072940526581782
+--- !u!95 &95784760129406868
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -281,7 +281,7 @@ Animator:
   m_GameObject: {fileID: 1165338647244354}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 982dce187c2bdc142b44fa8f5d62a82e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 316921675b9b4e545a0dc8954b2a878c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
