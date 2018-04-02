@@ -9,8 +9,10 @@ public class AdManager : MonoBehaviour {
 
 	public void PlayAdd()
     {
+        Debug.Log("inside playadd");
         if(Advertisement.IsReady())
         {
+            Debug.Log("In if ready");
             Advertisement.Show("rewardedVideo", new ShowOptions() { resultCallback = HandleAdResult });
         }
     } 
