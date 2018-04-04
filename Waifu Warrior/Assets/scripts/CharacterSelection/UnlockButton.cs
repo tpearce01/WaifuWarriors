@@ -34,6 +34,11 @@ public class UnlockButton : MonoBehaviour {
             GameManager.gameManager.SubtractMoney(price);
             PersistentDataManager.BuyWaifu(Waifu.Yellow);
         }
+        else if (ID == 4)
+        {
+            GameManager.gameManager.SubtractMoney(price);
+            PersistentDataManager.BuyWaifu(Waifu.Rival);
+        }
     }
 	// Update is called once per frame
 	void Update () {
