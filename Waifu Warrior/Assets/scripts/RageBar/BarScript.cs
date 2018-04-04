@@ -22,6 +22,7 @@ public class BarScript : MonoBehaviour {
     public GameObject ElectricShock;
     public GameObject WaterWave;
     public GameObject LightWave;
+    public GameObject PoisonWave;
 
     public float Value
     {
@@ -109,6 +110,10 @@ public class BarScript : MonoBehaviour {
         if (player == 3)
         {
             Instantiate(LightWave);
+        }
+        if (player == 4)
+        {
+            Instantiate(PoisonWave);
         }
 
 

@@ -65,7 +65,14 @@ public class Player : MonoBehaviour {
     {
         Shape.sprite = camo.sprite;
         anim.enabled = false;
-        trans.localScale = new Vector3(1.4f, 1.4f, 1.4f);
+        if (ID == 4)
+        {
+           
+        }
+        else
+        {
+            trans.localScale = new Vector3(1.4f, 1.4f, 1.4f);
+        }
         immune = true;
         camoshield.enabled = true;
     }

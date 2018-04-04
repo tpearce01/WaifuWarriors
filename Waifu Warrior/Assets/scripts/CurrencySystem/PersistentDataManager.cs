@@ -66,7 +66,7 @@ public static class PersistentDataManager {
                 Debug.Log(splitData[i + (int)Data.waifuStartIndex]);
             }
 
-            Debug.Log("Master Data:\nMoney=" + money + "\nItems:" + itemAmounts[0] + "," + itemAmounts[1] + "," + itemAmounts[2] + "," + itemAmounts[3] + "\nSelectedWaifu: " + selectedWaifu.ToString() + "\nWaifus:" + waifusOwned[0] + "," + waifusOwned[1] + "," + waifusOwned[2] + "," + waifusOwned[3]);
+            Debug.Log("Master Data:\nMoney=" + money + "\nItems:" + itemAmounts[0] + "," + itemAmounts[1] + "," + itemAmounts[2] + "," + itemAmounts[3] + "\nSelectedWaifu: " + selectedWaifu.ToString() + "\nWaifus:" + waifusOwned[0] + "," + waifusOwned[1] + "," + waifusOwned[2] + "," + waifusOwned[3] + "," + waifusOwned[4]);
 
         }
         catch (Exception e) {
