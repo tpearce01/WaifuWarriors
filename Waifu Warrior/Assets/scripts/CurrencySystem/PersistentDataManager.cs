@@ -175,7 +175,7 @@ public enum Data {
     itemEndIndex = 5,
     selectedWaifuIndex = 5,
     waifuStartIndex = 6,
-    waifuEndIndex = 10
+    waifuEndIndex = 11 //10
 }
 
 /// <summary>
@@ -195,6 +195,7 @@ public enum Waifu {
     Pink = 0, //pink hair
     Sora = 1, 
     Nana = 2,
-    Yellow = 3
+    Yellow = 3,
+    Rival = 4
 }
 

@@ -44,7 +44,14 @@ public class LockSystem : MonoBehaviour {
         {
             locked_screen[2].SetActive(false);
         }
-
+        if (!PersistentDataManager.IsWaifuOwned(Waifu.Rival))
+        {
+            locked_screen[3].SetActive(true);
+        }
+        else if (PersistentDataManager.IsWaifuOwned(Waifu.Rival))
+        {
+            locked_screen[3].SetActive(false);
+        }
 
 
 
