@@ -11,10 +11,10 @@ public class MenuTransition : MonoBehaviour {
         {
             FirstTimeScreen.SetActive(true);
             GameManager.gameManager.AddMoney(40);
-            Debug.Log("WOOOOW FIRST TME BABBY LETS GOOOOOOO");  
+            //PlayerPrefs.DeleteKey("NotFirstTime");
+            PlayerPrefs.SetInt("NotFirstTime", 0);
         }
-        //PlayerPrefs.DeleteKey("NotFirstTime");
-        PlayerPrefs.SetInt("NotFirstTime", 0);
+        
         FindObjectOfType<MusicManager>().Play("MenuSong");
         Time.timeScale = 1f;
         
