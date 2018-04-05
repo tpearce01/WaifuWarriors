@@ -16,11 +16,12 @@ public class GameManager : MonoBehaviour {
 	void Awake ()
     {
         gameManager = this;
-	}
+        PersistentDataManager.LoadData();
+    }
 
 	void Start(){
 		//Money = Bank.BankCoins;
-		PersistentDataManager.LoadData();
+		
 		UpdateUI();
 	}
 	

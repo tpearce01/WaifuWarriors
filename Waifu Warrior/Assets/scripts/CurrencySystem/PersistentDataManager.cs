@@ -32,6 +32,7 @@ public static class PersistentDataManager {
             StreamWriter sr = new StreamWriter(Application.persistentDataPath + "/PlayerData.txt");
             sr.WriteLine(writeData);
             sr.Close();
+            Debug.Log("Save success. Save data: " + writeData);
         }
         catch (Exception e) {
             Debug.Log("Save data failed. " + e);
@@ -51,7 +52,6 @@ public static class PersistentDataManager {
 
             //Save data to variables.
             //Load money
-            GameManager.gameManager.SetMoney(Convert.ToInt32(splitData[(int)Data.money]));
             money = Convert.ToInt32(splitData[(int)Data.money]);
 
             //Load items
@@ -63,11 +63,12 @@ public static class PersistentDataManager {
             selectedWaifu = (Waifu)Int32.Parse(splitData[(int)Data.selectedWaifuIndex]);
             for (int i = 0; i < (int)Data.waifuEndIndex - (int)Data.waifuStartIndex; i++) {
                 waifusOwned[i] = splitData[i + (int)Data.waifuStartIndex].CompareTo("1") == 0;
-                Debug.Log(splitData[i + (int)Data.waifuStartIndex]);
             }
 
-            Debug.Log("Master Data:\nMoney=" + money + "\nItems:" + itemAmounts[0] + "," + itemAmounts[1] + "," + itemAmounts[2] + "," + itemAmounts[3] + "\nSelectedWaifu: " + selectedWaifu.ToString() + "\nWaifus:" + waifusOwned[0] + "," + waifusOwned[1] + "," + waifusOwned[2] + "," + waifusOwned[3] + "," + waifusOwned[4]);
+            //Set external vars
+            GameManager.gameManager.SetMoney(money);
 
+            Debug.Log("Load Success. Data: " + GetData());
         }
         catch (Exception e) {
             Debug.Log("Load failed. " + e);
@@ -93,10 +94,11 @@ public static class PersistentDataManager {
 
         //Save waifus
         toReturn += ',' + ((int)selectedWaifu).ToString();
-        for (int i = 0; i < waifusOwned.Length; i++) {
+        toReturn += ",1";   // Waifu 0 should always be unlocked, thus 1
+        for (int i = 1; i < waifusOwned.Length; i++) {
             toReturn += "," + (waifusOwned[i] ? '1' : '0');
         }
-        Debug.Log(toReturn);
+
         return toReturn;
     }
 
@@ -106,6 +108,7 @@ public static class PersistentDataManager {
     /// <param name="index"></param>
     public static void PurchaseItem(int index) {
         itemAmounts[index]++;
+        Debug.Log("Purchase Success! You have " + itemAmounts[index]);
         SaveData();
     }
 
@@ -115,6 +118,7 @@ public static class PersistentDataManager {
     /// <param name="index"></param>
     public static void UseItem(int index) {
         itemAmounts[index]--;
+        Debug.Log("Item used. You have " + itemAmounts[index]);
         SaveData();
     }
 
@@ -124,6 +128,7 @@ public static class PersistentDataManager {
     /// <param name="value"></param>
     public static void ChangeMoney(int value) {
         money += value;
+        Debug.Log("Money changed. You now have $" + money);
         SaveData();
     }
 
@@ -133,6 +138,7 @@ public static class PersistentDataManager {
     /// <param name="w"></param>
     public static void BuyWaifu(Waifu w) {
         waifusOwned[(int)w] = true;
+        Debug.Log("You got a new waifu! Welcome, " + w.ToString() + "!");
         SaveData();
     }
 
@@ -158,6 +164,7 @@ public static class PersistentDataManager {
     /// <param name="w"></param>
     public static void ChangeSelectedWaifu(Waifu w) {
         selectedWaifu = w;
+        Debug.Log("Waifu changed. Your new waifu is " + w.ToString() + ".");
         SaveData();
     }
 
