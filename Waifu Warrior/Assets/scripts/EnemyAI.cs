@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour {
 
+    
     public GameObject hit;
 	public Transform target;
 	public float speed;
@@ -12,34 +13,38 @@ public class EnemyAI : MonoBehaviour {
     public int health;
     Rigidbody2D rgbd;
  
-	// Use this for initialization
+	
 	void Start () {
         permanentSpeed = speed;
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
         rgbd = gameObject.GetComponent<Rigidbody2D>();
 	}
 
-    // Update is called once per frame
+ 
     void FixedUpdate() {
         Move();
         
     }
 
 	void Update () {
-
-        //transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-		/*float distanceToTarget = Vector3.Distance (transform.position, target.position);
-		if (distanceToTarget < chaseRange) {
-			Vector3 targetDir = target.position - transform.position;
-			float angle = Mathf.Atan2 (targetDir.y, targetDir.x) * Mathf.Rad2Deg - 90f;
-			Quaternion q = Quaternion.AngleAxis (angle, Vector3.forward);
-			transform.rotation = Quaternion.RotateTowards(transform.rotation, q, 180);
-
-			transform.Translate (Vector3.up * Time.deltaTime * speed);
-		}*/
+        if(Input.touchCount > 0)
+        {
+            //foreach(Touch touch in Input.touches)
+            {
+                RaycastHit2D hit;
+                hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint((Input.GetTouch(0).position)), Vector2.zero);
+                if(hit.collider != null && hit.collider.CompareTag("Enemy") && Input.GetTouch(0).phase == TouchPhase.Began)
+                {
+                    
+                    HitEnemey();
+                    //Destroy(hit.transform.gameObject);
+                }
+            }
+        }
 	}
+       
 
-    void OnMouseDown()
+    void HitEnemey()
     {
 
         FindObjectOfType<AudioManager>().Play("Tap");
@@ -47,21 +52,16 @@ public class EnemyAI : MonoBehaviour {
         Instantiate(hit, transform.position, transform.rotation);
         if (health <= 0)
         {
-            WrathManager.fillAmountWrath += .02f; //.02f
             Destroy(gameObject);
         }
-    }    
-       /* speed = 0;
-        Delay();
-        speed = permanentSpeed;
-
     }
-    IEnumerator Delay()
+
+
+    private void OnDestroy()
     {
-        yield return new WaitForSeconds(5);
-
-    }*/
-
+        WrathManager.Killed += 1;
+        WrathManager.fillAmountWrath += .02f;
+    }
     void Move() {
         rgbd.MovePosition(Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime));
     }

@@ -13,7 +13,8 @@ public class timer : MonoBehaviour {
     private float best;
     public Text gamescore;
     public Text highscore;
-
+    
+    private string[] num = {"0", "1","2", "3", "4", "5", "6", "7", "8", "9"}; //Makes the timer consistent size.
 	// Use this for initialization
 	void Start () {
         
@@ -33,6 +34,12 @@ public class timer : MonoBehaviour {
         time += Time.deltaTime;
         string minutes = ((int) time / 60).ToString();
         string seconds = (time % 60).ToString("f0");
+        foreach(string n in num)
+        { if (n == seconds)
+            {
+                seconds = "0" + seconds;
+            }
+        }
         timerText.text = minutes + ':' + seconds;
  
 

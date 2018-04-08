@@ -5,7 +5,7 @@ using UnityEngine;
 static class WrathManager{
 
     public static float fillAmountWrath; //The fillamount
-
+    public static int Killed = 0; //Enemies killed
 
     public static void EmptyWrath()
     {
