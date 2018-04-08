@@ -29,15 +29,17 @@ public class EnemyAI : MonoBehaviour {
 	void Update () {
         if(Input.touchCount > 0)
         {
-            //foreach(Touch touch in Input.touches)
+            foreach(Touch touch in Input.touches)
             {
                 RaycastHit2D hit;
                 hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint((Input.GetTouch(0).position)), Vector2.zero);
                 if(hit.collider != null && hit.collider.CompareTag("Enemy") && Input.GetTouch(0).phase == TouchPhase.Began)
                 {
+                    if (hit.transform.gameObject)
+                    {
+                        HitEnemey();
+                    }
                     
-                    HitEnemey();
-                    //Destroy(hit.transform.gameObject);
                 }
             }
         }
