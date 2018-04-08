@@ -43,7 +43,11 @@ public class SenpaiAI : MonoBehaviour {
 
                 if (hit.collider != null && hit.collider.CompareTag("Enemy") && Input.GetTouch(touch.fingerId).phase == TouchPhase.Began)
                 {
-                    HitEnemey();
+                    if (hit.transform.gameObject)
+                    {
+                        HitEnemey();
+                    }
+                    
                     //Destroy(hit.transform.gameObject);
                 }
             }
