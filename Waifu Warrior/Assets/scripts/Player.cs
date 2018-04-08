@@ -95,7 +95,20 @@ public class Player : MonoBehaviour {
 
     void Update()
     {
-        
+        if (Input.touchCount > 0)
+        {
+            foreach (Touch touch in Input.touches)
+            {
+                RaycastHit2D hit;
+                hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint((Input.GetTouch(touch.fingerId).position)), Vector2.zero);
+
+                if (hit.collider != null && hit.collider.CompareTag("Player") && Input.GetTouch(touch.fingerId).phase == TouchPhase.Moved)
+                {
+                    OnDrag();
+                    
+                }
+            }
+        }
         if (rgbd.position.y > boundary.yMax || rgbd.position.y < boundary.yMin) { dragOn = false; }
         else { dragOn = true; }
         
@@ -106,7 +119,7 @@ public class Player : MonoBehaviour {
         );
     }
 
-    void OnMouseDrag()
+    void OnDrag() //OnMouseDrag
     {
         
         if (dragOn)
