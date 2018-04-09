@@ -27,6 +27,7 @@ public class BuyButton : MonoBehaviour {
 
                 ItemShop.itemShop.itemList[i].bought = true;
                 GameManager.gameManager.SubtractMoney(ItemShop.itemShop.itemList[i].ItemPrice);
+                FindObjectOfType<AudioManager>().Play("CashBell");
                 UpdateBuyButton();
 
 				//item index = i, thus the save index for persistentdatamanager = i+itemstart;
@@ -38,6 +39,7 @@ public class BuyButton : MonoBehaviour {
             else if (ItemShop.itemShop.itemList[i].ItemID == itemID && !ItemShop.itemShop.itemList[i].bought && !GameManager.gameManager.CheckMoney(ItemShop.itemShop.itemList[i].ItemPrice))
             {
                 NotEnoughGoldWindow.SetActive(true);
+
                 Debug.Log("NO Enough money");
             }
 
