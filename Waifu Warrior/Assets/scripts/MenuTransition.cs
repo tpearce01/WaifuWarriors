@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MenuTransition : MonoBehaviour {
 
+    public GameObject QuitApplication;
     public GameObject FirstTimeScreen;
 	// Use this for initialization
 	void Start () {
@@ -33,6 +34,10 @@ public class MenuTransition : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            QuitApplication.SetActive(true);
+        }
 		
 	}
 }

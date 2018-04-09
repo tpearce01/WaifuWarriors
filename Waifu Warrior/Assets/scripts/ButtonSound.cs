@@ -20,4 +20,9 @@ public class ButtonSound : MonoBehaviour {
     {
         FindObjectOfType<AudioManager>().Play("CloseWindow");
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
