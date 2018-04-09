@@ -24,4 +24,18 @@ public class KillCounter : MonoBehaviour {
         }
         KilledNum.text = KilledString;
 	}
+
+    public void Size()
+    {
+        this.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+        StartCoroutine(ChangeSize());
+        
+    }
+
+    IEnumerator ChangeSize()
+    {
+       
+        yield return new WaitForSeconds(.2f);
+        this.transform.localScale = new Vector3(1f, 1f, 1f);
+    }
 }

@@ -34,6 +34,21 @@ public class SenpaiAI : MonoBehaviour {
 
     void Update()
     {
+        /*
+        for (int i = 0; i < Input.touchCount; ++i)
+        {
+            Vector2 test = Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position);
+            if (Input.GetTouch(i).phase == TouchPhase.Began)
+            {
+                test = Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position);
+
+                RaycastHit2D hitr = Physics2D.Raycast(test, (Input.GetTouch(i).position));
+                if (hitr.collider && hitr.collider.tag == "Enemy" && hit.transform.gameObject)
+                {
+                    HitEnemey();
+                }
+            }
+        }
         if (Input.touchCount > 0)
         {
             foreach (Touch touch in Input.touches)
@@ -51,10 +66,10 @@ public class SenpaiAI : MonoBehaviour {
                     //Destroy(hit.transform.gameObject);
                 }
             }
-        }
+        }*/
     }
 
-    void HitEnemey()
+    void OnMouseDown()
     {
         FindObjectOfType<AudioManager>().Play("Tap");
         health = health - 1;

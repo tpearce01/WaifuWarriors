@@ -102,10 +102,9 @@ public class Player : MonoBehaviour {
                 RaycastHit2D hit;
                 hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint((Input.GetTouch(touch.fingerId).position)), Vector2.zero);
 
-                if (hit.collider != null && hit.collider.CompareTag("Player") && Input.GetTouch(touch.fingerId).phase == TouchPhase.Moved)
+                if (hit.collider != null && hit.collider.CompareTag("Player"))
                 {
                     OnDrag();
-                    
                 }
             }
         }
