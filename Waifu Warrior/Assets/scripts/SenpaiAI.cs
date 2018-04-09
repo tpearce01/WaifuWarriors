@@ -14,10 +14,12 @@ public class SenpaiAI : MonoBehaviour {
     public float chaseRange;
     public int health;
     Rigidbody2D rgbd;
+    KillCounter KilledText;
 
-    
+
     void Start()
     {
+        KilledText = FindObjectOfType<KillCounter>();
         temp = speed;
         target = GameObject.FindGameObjectWithTag("Player").transform;
         rgbd = gameObject.GetComponent<Rigidbody2D>();
@@ -82,6 +84,7 @@ public class SenpaiAI : MonoBehaviour {
     private void OnDestroy()
     {
         WrathManager.Killed += 1;
+        KilledText.Size();
         WrathManager.fillAmountWrath += .02f;
     }
 
