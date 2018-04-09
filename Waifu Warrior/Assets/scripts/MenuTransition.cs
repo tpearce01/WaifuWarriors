@@ -9,7 +9,9 @@ public class MenuTransition : MonoBehaviour {
 	void Start () {
         if(!PlayerPrefs.HasKey("NotFirstTime"))
         {
-            PlayerPrefs.SetInt("AuidoSound", 1);
+            FindObjectOfType<AudioManager>().MuiscOn();
+            FindObjectOfType<MusicManager>().MuiscOn();
+            PlayerPrefs.SetInt("AudioSound", 1);
             PlayerPrefs.SetInt("MusicSound", 1);
             FirstTimeScreen.SetActive(true);
             GameManager.gameManager.AddMoney(40);   
