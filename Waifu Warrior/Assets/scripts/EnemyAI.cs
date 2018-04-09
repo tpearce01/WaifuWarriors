@@ -12,9 +12,11 @@ public class EnemyAI : MonoBehaviour {
 	public float chaseRange;
     public int health;
     Rigidbody2D rgbd;
+    KillCounter KilledText;
  
 	
 	void Start () {
+        KilledText = FindObjectOfType<KillCounter>();
         permanentSpeed = speed;
 		target = GameObject.FindGameObjectWithTag ("Player").transform;
         rgbd = gameObject.GetComponent<Rigidbody2D>();
@@ -27,13 +29,34 @@ public class EnemyAI : MonoBehaviour {
     }
 
 	void Update () {
+        
+        /*    
+            for (int i = 0; i < Input.touchCount; ++i)
+            {
+                Vector2 test = Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position);
+                if (Input.GetTouch(i).phase == TouchPhase.Stationary)
+                {
+                    test = Camera.main.ScreenToWorldPoint(Input.GetTouch(i).position);
+
+                    RaycastHit2D hitr = Physics2D.Raycast(test, (Input.GetTouch(i).position));
+                
+                    if (hitr.collider && hitr.collider.tag == "Enemy" && hit.transform.gameObject)
+                    {
+                    Debug.Log(hitr.transform.position);
+                        HitEnemy();
+                    }
+                }
+            }
+        
+        
+        
         if(Input.touchCount > 0)
         {
             foreach(Touch touch in Input.touches)
             {
                 RaycastHit2D hit;
-                hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint((Input.GetTouch(0).position)), Vector2.zero);
-                if(hit.collider != null && hit.collider.CompareTag("Enemy") && Input.GetTouch(0).phase == TouchPhase.Began)
+                hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint((Input.GetTouch(touch.fingerId).position)), Vector2.zero);
+                if(hit.collider != null && hit.collider.CompareTag("Enemy") && Input.GetTouch(touch.fingerId).phase == TouchPhase.Began)
                 {
                     if (hit.transform.gameObject)
                     {
@@ -42,11 +65,11 @@ public class EnemyAI : MonoBehaviour {
                     
                 }
             }
-        }
-	}
+        }*/
+    }
        
 
-    void HitEnemey()
+    void OnMouseDown()
     {
 
         FindObjectOfType<AudioManager>().Play("Tap");
@@ -62,6 +85,7 @@ public class EnemyAI : MonoBehaviour {
     private void OnDestroy()
     {
         WrathManager.Killed += 1;
+        KilledText.Size();
         WrathManager.fillAmountWrath += .02f;
     }
     void Move() {
